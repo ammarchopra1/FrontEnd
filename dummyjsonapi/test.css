@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}   
+
+#image
+{
+    height:30px;
+    width:30px;
+}
+#search
+{
+    margin-left: 80%;
+}

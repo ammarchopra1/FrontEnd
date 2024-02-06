@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="test.css">
+
+    
+    <script src="script.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+   
+    <title>Document</title>
+
+</head>
+<body>
+  <script>let alpha='';</script>  
+<h1> product details</h1>
+<button type="button" class="btn btn-primary" onclick="addnewproduct()">Add Product</button>
+
+<button type="button" class="btn btn-primary" id="search" onclick="searchproduct()">Search</button>
+
+<table  class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>DiscrountPercentage</th>
+            <th>Rating</th>
+            <th>Stock</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Thumbnail</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody id="tablerows"></tbody>
+</table>
+<script>
+    
+fetch('https://dummyjson.com/products')
+// fetch('https://dummyjson.com/products?limit=10&skip=10&select=title,price')
+
+.then(res => res.json())
+.then(data=>{
+    
+    alpha=data.products;
+    let row='';
+    alpha.forEach(element => {
+
+    row+=`<tr><td>${element.id}</td><td>${element.title}</td><td>${element.description}</td><td>${element.price}</td><td>${element.discountPercentage}</td><td>${element.rating}</td>
+        <td>${element.stock}</td><td>${element.brand}</td><td>${element.category}</td><td><img id="image" src="${element.thumbnail}"</td><td><button type="button" class="btn btn-primary" onclick="del(${element.id})">Delete</button>
+        </td><td><button type="button" class="btn btn-primary" onclick="update()">Update</button></td></tr>`;
+
+    });
+    document.getElementById("tablerows").innerHTML=row;
+
+});
+
+</script>
+<script>
+    function del(id)
+    {
+        fetch('https://dummyjson.com/products/1', {
+  method: 'DELETE',
+})
+.then(res => res.json())
+// location.reload();
+
+            
+}
+
+function update()
+
+{
+  fetch('https://dummyjson.com/products/1', {
+  method: 'PUT', /* or PATCH */
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    title: 'iPhone Galaxy +1'
+  })
+})
+.then(res => res.json())
+.then(console.log);
+    }
+
+function addnewproduct()
+{
+    fetch('https://dummyjson.com/products/add', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    title: 'BMW Pencil',
+    /* other product data */
+  })
+})
+.then(res => res.json())
+.then(console.log);
+
+}
+function searchproduct()
+{
+    fetch('https://dummyjson.com/products/search?q=phone')
+.then(res => res.json())
+.then(console.log);
+
+}
+</script>
+</body>
+</html>
