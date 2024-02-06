@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+       
+        let input=prompt("Enter the input string");
+        
+        let input2=prompt("Enter the string you want to count in given string");
+
+        let r = input.split(input2).length - 1;
+
+        document.getElementById("demo").innerHTML="The occurence of "+input2+" "+"in the given string is "+"="+r;
+
+    </script>
+</body>
+</html>

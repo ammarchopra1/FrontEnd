@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        
+        let input=prompt("Enter the string to count for white space characters");
+        let temp=input.length;
+        let count=0;
+        if(temp==0)
+        {
+            document.getElementById("demo").innerHTML="The Enter String is empty no whitespace found";
+        }
+        else
+        {
+            for (let i=0;i<temp;i++)
+            {
+                if(input[i]==" ")
+                {
+                        count++;
+                }
+            }
+        
+            document.getElementById("demo").innerHTML="The total number of white spaces found in the given text are "+"="+count;
+        }
+
+    </script>
+</body>
+</html>

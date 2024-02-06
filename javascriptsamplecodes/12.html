@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>    
+    <script>
+        
+
+        let input=prompt("Enter the string to count the words");
+       
+        
+        const array = input.trim().split(/\s+/); 
+
+        let length=array.length;
+        if(length>1)
+        {
+        document.getElementById("demo").innerHTML="The Total Number of Words in a String are "+""+length;
+        }
+        else
+        {
+        document.getElementById("demo").innerHTML="The Input Is Empty Please Enter the String to count the value of string";
+        }
+        
+    </script>
+</body>
+</html>

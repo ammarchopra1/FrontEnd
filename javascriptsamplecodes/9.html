@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+
+        function checkpalindrome(str)
+    
+        {
+            // str=str.split("");
+            // console.log(rev);
+            // console.log(str);
+            // let j=str.length-1;
+            // j=parseInt(j);
+            // for(let i=0;i<rev.length;i++)
+            // {
+            //     if(str[i]===rev[j])
+            //     {
+            //         console.log("a");
+            //     }
+                
+            // }
+                let j=str.length;
+                j=j-1;
+                console.log(j);
+                for(let i=0;i<str.length;i++)
+                {
+                    if(str[i]==str[j])
+                    {
+                        return "The String is Palindrome";
+                    }
+                    else
+                    {
+                        return "The String is not palindrome";
+                    }
+                    j--;
+
+                }
+
+        }
+        
+        var n1=prompt("Enter number to check if number is palindrome or not");
+        
+        var splitstring=n1.split("");
+
+        // var reversearray=splitstring.reverse();
+
+        
+        
+
+        let temp=checkpalindrome(splitstring);
+        document.getElementById("demo").innerHTML=temp;
+    
+    </script>
+</body>
+</html>

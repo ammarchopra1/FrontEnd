@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+            function checkarmstrong(n1,n2)
+            {
+                
+               if(n1==n2)
+               {
+                return "The Number is Armstrong";
+               }
+               else
+               {
+                return "The Number is Not Armstrong";
+               }
+
+            }
+
+            let n1=prompt("Enter The Number to Check if Its Armstrong or not");
+            n3=n1;
+            n1=String(n1);
+            n2=0;
+            
+            let length=n1.length;
+            let temp=length;
+            let temp2=0;
+
+            
+            for(i=0;i<length;i++)
+            {
+
+                n2=parseInt(n1[i]);
+                temp2=temp2+ Math.pow(n2,temp);
+            
+            }
+            
+            let message=checkarmstrong(n3,temp2)
+            
+            document.getElementById("demo").innerHTML=message;
+
+
+    </script>
+</body>
+</html>

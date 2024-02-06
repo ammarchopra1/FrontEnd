@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let status=0;
+        let status1=0;
+        function checkfancy(temp)
+        {
+            let i=0; let j=1;
+            if(temp[i]==temp[j])
+            {            
+                document.write(temp,"<br>");
+                document.write("The string is fancy");
+
+                console.log("The string is not fancy");
+                status=1;
+            }
+            else if(temp[i]<temp[j])
+            {
+                
+                document.write(temp,"<br>");
+                document.write("The string is fancy");
+                status=0;
+            }
+            else if(temp[i]>temp[j])
+            {
+                document.write(temp,"<br>");
+                document.write("The string is fancy");
+                status=1;
+            }
+        status1=1;
+        }
+        function two(temp3)
+        {
+          
+        let i=0;let j=1;
+        if(temp3[i]==temp3[j]||temp3[i]<temp3[j])
+        {
+            console.log(temp3);
+
+            console.log("the string is not fancy");
+            status=1;
+        }
+        else if(temp3[i]>temp3[j])
+        {
+                console.log(temp3);
+                console.log("The string is  fancy");
+           
+            status=0;
+        }
+        status1=0;
+
+        }
+        let input=prompt("Enter the string");
+        
+        const myarray=input.split("");
+        let message="";
+        let message1="";
+        let j=2;
+        let check=0;
+        for(let i=0;i<myarray.length-1;i++)
+        {
+            
+            if(status1==0)
+            {
+
+           const temp=myarray.slice(i,j);
+//console.log(temp);
+
+           checkfancy(temp);
+            }
+            else if(status1==1)
+            {
+
+               const temp=myarray.slice(i,j);
+  //             console.log(temp);
+
+           two(temp);
+            }
+
+           ///////////////////////////////
+           if(status==1)
+           {
+            message="The string is not fancy";
+            break;
+           }
+            else if(status==0)
+            {
+             message1="The string is fancy";
+         }
+            j=j+1;
+        }
+         if(status==1)
+         {
+         document.getElementById("demo").innerHTML=message;
+         }
+         else if(status==0)
+         {
+         document.getElementById("demo").innerHTML=message1;
+         }
+    </script>
+</body>
+</html>

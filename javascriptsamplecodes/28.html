@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        
+        let input=prompt("Enter the first string to check for insensitive case strings");
+        
+        let input2=prompt("Enter the second string to check for insensitive case string");
+
+        input=input.toLocaleLowerCase();
+        console.log(input);
+        input2=input2.toLocaleLowerCase();
+        console.log(input2);
+        let result=input.localeCompare(input2);
+
+        document.getElementById("demo").innerHTML=result;
+    </script>
+
+</body>
+</html>

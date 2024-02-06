@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+       
+        let input=prompt("Enter the string to count the occurence of character in each string");
+
+        let length=input.length;
+        
+        let count=0;
+        
+        let temp="";
+        
+        let data=[];
+
+        for( let i=0;i<length;i++)
+        
+        {
+            if(input[i]==" ")
+            {
+                continue;
+            }
+            else
+            {
+              
+            for(let j=0;j<length;j++)
+            {
+                if(input[i]==input[j])
+                count=count+1;
+            }
+            // temp+="The count of "+input[i]+"="+count+"<br>";
+            let entry = {"character": input[i], "count": count};
+            data.push(entry);
+            count=0;
+        }
+
+        }
+        jsonObject = data.map(JSON.stringify);
+        uniqueSet = new Set(jsonObject);
+        uniqueArray = Array.from(uniqueSet).map(JSON.parse);
+        console.log(uniqueArray);
+
+
+        
+         document.getElementById("demo").innerHTML=JSON.stringify(uni);
+
+    </script>
+</body>
+</html>

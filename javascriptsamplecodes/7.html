@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function sumofnaturalnumbers(n1)
+        {
+            let temp=0;
+            for(let i=0;i<n1.length;i++)
+            {
+                if((n1[i]=="-"))
+                {
+                    i=i+1;
+                    console.log(n1[i]);
+
+                }
+                else{
+                    n1[i]=parseInt(n1[i]);
+                    temp=temp+n1[i];
+                    }
+            }
+            return temp;
+        }
+        let n1=prompt("Enter first number");
+        let array=n1.split("");
+        console.log(array);
+    
+        let temp=sumofnaturalnumbers(array);
+        document.getElementById("demo").innerHTML="The sum of  natural numbers is "+"="+temp;
+    </script>
+</body>
+</html>

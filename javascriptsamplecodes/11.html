@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        function farenheighttocelcius(temperature)
+        {
+
+            return (temperature*9/5)+32;
+
+        }
+        let celcius=prompt("Enter temperature in celcius ");
+        celcius=parseFloat(celcius);
+
+        let temp=farenheighttocelcius(celcius);
+
+
+        document.getElementById("demo").innerHTML="The Temperature is in Farenheight"+" "+temp;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <p id="demo"> </p>
+    <script >
+        
+        let input=prompt("please enter Number to print table");
+        let initial_range=prompt("please enter initial value");
+        let final_range=prompt("please enter final value");
+        final_range=parseInt(final_range );
+        let temp="";
+        
+        for(let i=initial_range;i<=final_range;i++)
+        {
+            temp+=input+" * "+i+"="+input*i+"<br>";
+        }
+        
+        document.getElementById("demo").innerHTML=temp;
+        
+        
+
+    </script>
+
+</body>
+
+
+</html>

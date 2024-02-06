@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        
+        let input=prompt("Enter the string to count the number of vowels in the string");
+        const vowels = ["a", "e", "i","o","u"]; 
+
+        let length=5;
+        let inputlength=input.length;
+        let temp="";
+        let count=0;
+        for(let i=0;i<length;i++)
+        {
+            for(let j=0;j<inputlength;j++)
+            {
+                if(vowels[i]==input[j])
+                {
+                    count=count+1;
+                }
+
+            }
+            temp+="The Count of Vowels"+" "+vowels[i]+"="+count;
+            count=0;
+        }
+        document.getElementById("demo").innerHTML=temp;
+
+
+
+
+    </script>
+</body>
+</html>

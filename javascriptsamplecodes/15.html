@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+
+        let input=prompt("Enter the Input String");
+        let input1=prompt("Enter the word or character you want to be replaced");
+        let input2=prompt("Enter the word or character you want to replace with ");
+
+
+        document.getElementById("demo").innerHTML=input.replaceAll(input1,input2);
+
+    </script>
+</body>
+</html>

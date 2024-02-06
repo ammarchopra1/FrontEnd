@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function evenorodd(n1)
+        {
+            if(n1%2==0)
+            {
+                return "even";
+            }
+            else
+            {
+                return "odd";
+            }
+            
+        }
+       let n1=prompt("Enter Number to check its even or odd");
+       n1=parseInt(n1);
+
+       let temp=evenorodd(n1);
+       document.getElementById("demo").innerHTML="Number is "+"="+temp;
+
+    </script>
+</body>
+</html>

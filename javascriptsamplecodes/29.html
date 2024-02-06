@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let input=prompt("Enter the strign for all possible combinations");
+        let length=input.length;
+        let temp=[];
+        
+        for(let i=0;i<length;i++)
+        
+        {
+            for(let j=i+1;j<length+1;j++)
+            {
+        
+                temp.push(input.slice(i,j));
+        
+            }
+        }
+
+        
+        
+        
+
+         document.getElementById("demo").innerHTML=temp;
+    </script>
+</body>
+</html>
